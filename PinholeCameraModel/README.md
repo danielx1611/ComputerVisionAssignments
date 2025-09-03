@@ -12,6 +12,7 @@
    - Upload `.jpeg` images → program has them saved to `/content/images/`.
    - Set pattern size (inner corners) and square size (meters).
    - Click **Run Calibration**.
+   - When done executing, Click **Visualize Results**.
 4. Results:
    - `calibration.json` storing K (intrinsics), R, t (extrinsics), D (distortion), width, height.
    - 3D camera pose plot.
