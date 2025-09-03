@@ -5,6 +5,6 @@ This is a collection of computer vision assignments for CSE 5283 Computer Vision
 
 ### Contributors
 This repo is contributed to by the following students:
-Daniel Acosta
-Yavanni Ensley
-Younghoon Cho
+- Daniel Acosta
+- Yavanni Ensley
+- Younghoon Cho
