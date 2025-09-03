@@ -1,0 +1,24 @@
+# Camera Calibration (OpenCV + Gradio)
+
+## Setup
+- Open in Google Colab.
+- Run the first and second code cells to install packages and prepare core functions.
+- Run the Gradio UI cell to start up the gradio UI needed to upload images and run the calibration scripts
+
+## How to Use
+1. Print the OpenCV chessboard: https://docs.opencv.org/4.x/pattern.png  
+2. Capture 15–20 images of the board from varied angles.
+3. In the notebook UI:
+   - Upload `.jpeg` images → program has them saved to `/content/images/`.
+   - Set pattern size (inner corners) and square size (meters).
+   - Click **Run Calibration**.
+4. Results:
+   - `calibration.json` storing K (intrinsics), R, t (extrinsics), D (distortion), width, height.
+   - 3D camera pose plot.
+   - Sample overlays with world axes.
+
+## Code Structure
+- **Calib**: calibration, I/O with OpenCV FileStorage.
+- **Board**: chessboard object model.
+- **Overlay**: draw axes overlays.
+- **IO**: directory and file helpers.
