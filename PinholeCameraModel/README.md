@@ -2,7 +2,7 @@
 
 ## Setup
 - Open in Google Colab.
-- Run the first and second code cells to install packages and prepare core functions.
+- Run all code cells leading up to the to install packages and prepare core functions.
 - Run the Gradio UI cell to start up the gradio UI needed to upload images and run the calibration scripts
 
 ## How to Use
@@ -19,7 +19,8 @@
    - Sample overlays with world axes.
 
 ## Code Structure
-- **Calib**: calibration, I/O with OpenCV FileStorage.
-- **Board**: chessboard object model.
-- **Overlay**: draw axes overlays.
-- **IO**: directory and file helpers.
+- **Initialization**: install necessary libraries and call required imports
+- **Camera Calibration**: calibration, I/O with OpenCV FileStorage.
+- **Visualization**: converting json result data to 3d camera plots and adding world axes to chessboard images
+- **Gradio UI**: gradio ui setup and helper functions.
+- **Interact**: run gradio ui for interaction with code via file upload.
