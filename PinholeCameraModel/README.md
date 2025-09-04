@@ -10,7 +10,6 @@
 2. Capture 15–20 images of the board from varied angles.
 3. In the notebook UI:
    - Upload `.jpeg` images → program has them saved to `/content/images/`.
-   - Set pattern size (inner corners) and square size (meters).
    - Click **Run Calibration**.
    - When done executing, Click **Visualize Results**.
 4. Results:
