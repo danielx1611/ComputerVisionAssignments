@@ -24,12 +24,12 @@
 - **Gradio UI**: gradio ui setup and helper functions.
 - **Interact**: run gradio ui for interaction with code via file upload.
 
-## Homework Questions
+## Homework Questions & answers
 - Were R,t similar? Any noticeable translation scale issues?
-Rotation will be similar. However, t would be differnt in sizewize when inputing an incorrect scale value.
+\n Rotation will be similar. However, t would be differnt in sizewize when inputing an incorrect scale value.
 - Did RANSAC help? Sensitivity to point order? Try more points with some noisy ones.
-CV.RANSAC will help to ignore outliers which will give a more stable transformation.
+\n CV.RANSAC will help to ignore outliers which will give a more stable transformation.
 - Effects of undistortion vs. using raw image with `distCoeffs`.
-Both can be solved but only should use one. When using undistorted images, use solvePNP. When using raw images, we should do distortion correction first.
+\n Both can be solved but only should use one. When using undistorted images, use solvePNP. When using raw images, we should do distortion correction first.
 - Numerical quirks: orthonormalization, det(R) sign.
-RR.T should be identity matrix. also, if det(R) is negative, should multiply -1 on third row to correct the rotation
+\n RR.T should be identity matrix. also, if det(R) is negative, should multiply -1 on third row to correct the rotation
