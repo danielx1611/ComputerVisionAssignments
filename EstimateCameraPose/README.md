@@ -2,8 +2,9 @@
 
 ## Setup
 - Open in Google Colab.
-- Run all code cells leading up to the to install packages and prepare core functions.
-- Run the Gradio UI cell to start up the gradio UI needed to upload images and run the calibration scripts
+- Run all code cells leading up to the driver code header to install packages and prepare core functions.
+- Run the Central UI cell to start up the gradio UI needed to upload images and run the calibration scripts
+- Run the Picker UI cell to upload images and mark the corners of the desired object
 
 ## How to Use
 1. Print the OpenCV chessboard: https://docs.opencv.org/4.x/pattern.png  
@@ -11,18 +12,23 @@
 3. In the notebook UI:
    - Upload `.jpeg` images → program has them saved to `/content/images/`.
    - Click **Run Calibration**.
-   - When done executing, Click **Visualize Results**.
+   - When done executing, go to the picker UI, upload `.jpeg` images, and select the corners of the square for the uploaded image, then click **Done**.
+   - After marking images with the picker UI, switch the central UI to the **Homography/Poses** tab.
+   - Click **Calculate Homography Matrices**.
+   - After execution is complete, click **Run Homography Pose** and after it is finished executing, click **Run OpenCV Pose**.
 4. Results:
    - `calibration.json` storing K (intrinsics), R, t (extrinsics), D (distortion), width, height.
-   - 3D camera pose plot.
-   - Sample overlays with world axes.
+   - Before/After images of planar object with corners of square marked.
+   - 3D camera pose plot (one from explicit calculations, other from openCV).
+   - Sample overlays with world axes (one set from explicit calculations, other from openCV).
 
 ## Code Structure
 - **Initialization**: install necessary libraries and call required imports
 - **Camera Calibration**: calibration, I/O with OpenCV FileStorage.
-- **Visualization**: converting json result data to 3d camera plots and adding world axes to chessboard images
-- **Gradio UI**: gradio ui setup and helper functions.
-- **Interact**: run gradio ui for interaction with code via file upload.
+- **Utils**: utility functions for drawing figures/axes.
+- **Camera Pose and Position Extraction**: core class for extracting camera intrinsics from homography data and computing camera pose
+- **UI Tabs**: gradio ui setup and helper functions.
+- **Interact**: run gradio ui for interaction with code via file upload and picker. Converting json result data to 3d camera plots and adding world axes to planar object images
 
 ## Homework Questions & answers
 - Were R,t similar? Any noticeable translation scale issues?
